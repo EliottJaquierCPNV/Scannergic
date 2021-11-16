@@ -42,3 +42,4 @@ A MySQL client / SGBDR (for managing database)
 #### To design
 - Balsamiq Wireframe / Mockup
 - Draw.io / Diagrams.net
+- Astah Community / UML
