@@ -26,18 +26,12 @@ Database : MySQL
 ![SchémadePrincipe2](https://user-images.githubusercontent.com/61775725/141955527-72237c5a-a55d-431d-a332-4cf52c142d89.png)
 
 ## Prerequisites
-### To use
-Server side :
- - .NET runtime for ASP.NET
- - (ISS Web server)
-
-Client side (this project)
- - Android phone (whit the APK installed)
+### To use (client side / this project)
+ - Android phone (with the APK installed)
 ### To collaborate (client side / this project)
 Visual Studio (2019 community is used)
 Packages :
  - Mobile developpement .NET (Xamarin)
-
 #### To design
 - Balsamiq Wireframe / Mockup
 - Draw.io / Diagrams.net
