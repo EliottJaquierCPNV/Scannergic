@@ -1,5 +1,7 @@
+
+
 # Scannergic
-# Introduction
+## Introduction
 
 ### General idea of the project
 
@@ -28,16 +30,13 @@ Database : MySQL
 Server side :
  - .NET runtime for ASP.NET
  - (ISS Web server)
-Client side :
+
+Client side (this project)
  - Android phone (whit the APK installed)
-### To collaborate
-Visual Studio (2019 community is used) / C# compiler
-
+### To collaborate (client side / this project)
+Visual Studio (2019 community is used)
 Packages :
- - WEB Developpement ASP.NET (for server side)
- - Mobile developpement .NET (Xamarin) (for client side)
-
-A MySQL client / SGBDR (for managing database)
+ - Mobile developpement .NET (Xamarin)
 
 #### To design
 - Balsamiq Wireframe / Mockup
