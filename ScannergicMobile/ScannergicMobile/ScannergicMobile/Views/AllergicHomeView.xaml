@@ -4,8 +4,7 @@
              x:Class="ScannergicMobile.Views.AllergicHomeView"
              Title="{Binding Title}"
              xmlns:local="clr-namespace:ScannergicMobile.ViewModels"  
-             xmlns:model="clr-namespace:ScannergicMobile.Models"  
-             x:Name="AllergicHomeView">
+             xmlns:model="clr-namespace:ScannergicMobile.Models">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Ajouter un allergène" Command="{Binding AddAllergen}" />
     </ContentPage.ToolbarItems>
