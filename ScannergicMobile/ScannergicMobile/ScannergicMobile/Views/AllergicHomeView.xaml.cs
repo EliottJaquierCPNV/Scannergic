@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScannergicMobile.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace ScannergicMobile.Views
         public AllergicHomeView()
         {
             InitializeComponent();
+            BindingContext = new AllergicHome();
         }
     }
 }

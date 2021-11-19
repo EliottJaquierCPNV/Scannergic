@@ -30,8 +30,8 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="About" Icon="icon_about.png" Route="AllergicHomeView" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
-        <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
+        <ShellContent Title="Allergies" Icon="icon_about.png" Route="AllergicHomeView" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
+        <ShellContent Title="Scanner" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
     </TabBar>
 
     <!--
