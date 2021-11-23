@@ -34,6 +34,10 @@
         <ShellContent Title="Scanner" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
     </TabBar>
 
+    <TabBar>
+        <ShellContent Title="AA" Icon="icon_about.png" Route="AllergenAddView" ContentTemplate="{DataTemplate local:AllergenAddView}" />
+    </TabBar>
+
     <!--
         If you would like to navigate to this content you can do so by calling
         await Shell.Current.GoToAsync("//LoginPage");

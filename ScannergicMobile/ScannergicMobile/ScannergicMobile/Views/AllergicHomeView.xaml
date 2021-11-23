@@ -4,20 +4,20 @@
              x:Class="ScannergicMobile.Views.AllergicHomeView"
              Title="{Binding Title}"
              xmlns:local="clr-namespace:ScannergicMobile.ViewModels"  
-             xmlns:model="clr-namespace:ScannergicMobile.Models">
+             xmlns:model="clr-namespace:ScannergicMobile.Models"
+             x:Name="AllergicHome">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Ajouter un allergène" Command="{Binding AddAllergen}" />
     </ContentPage.ToolbarItems>
     <RefreshView x:DataType="local:AllergicHome" Command="{Binding LoadAllergensCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-        <CollectionView x:Name="ItemsListView"
-                ItemsSource="{Binding Allergens}"
+        <ListView x:Name="ItemsListView"
+                ItemsSource="{Binding Allergens, Mode=TwoWay}"
                 SelectionMode="None">
-            <CollectionView.ItemTemplate>
+            <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Item">
-                    <TextCell Text="{Binding Text}" Detail="" />
-                    
+                    <TextCell Text="{Binding Text}" Command="{Binding BindingContext.ItemTapped, Source={x:Reference AllergicHome} }" CommandParameter="{Binding .}"/>
                 </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+            </ListView.ItemTemplate>
+        </ListView>
     </RefreshView>
 </ContentPage>
