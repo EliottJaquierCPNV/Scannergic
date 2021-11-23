@@ -1,0 +1,5 @@
+Valeur;Nom de la storie;Type;Tests;;;
+10;Un allergique peut ajouter un allérgêne pour l'avoir dans sa collectionn;Technical Storie Frontend;Les allergênes peuvent être trouvés dans une liste de l'app Mobile;Il est possible d'ajouter un allergen;la liste des allergènes est récupérée depuis l'API;Le nouvel allergène se retrouve dans la liste
+15;Un allergique peut scanner un produit pour voir les allergens problèmatiques;Technical Storie Frontend;L'application peut scanner un code bar pour obtenir le texte du code bar;La communication du texte du code bar se fait à l'API;Affichage de la liste des allergênes présents;Un récapitulatif du produit
+7;Un allergique peut ajouter un produit s'il n'est pas trouvé;Technical Storie Frontend;L'application demande les ingrédients du produit après le scan;Le nouveau produit est transmit au serveur et Lors du scan de ce produit, il est reconnu;;
+5;Un utilisateur mobile peut avoir plusieurs allergiques;Technical Storie Frontend;Il y a un onglet pour ajouter un allergique;Chaque allergique a des allergènes;Lors d'un scan, chaque allergiques est scanné;
