@@ -5,17 +5,17 @@
              Title="{Binding Title}"
              xmlns:local="clr-namespace:ScannergicMobile.ViewModels"  
              xmlns:model="clr-namespace:ScannergicMobile.Models"
-             x:Name="AllergicHome">
+             x:Name="AllergicHomeXML">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Ajouter un allergène" Command="{Binding AddAllergen}" />
+        <ToolbarItem Text="Ajouter un allergène" Command="{Binding ShowAddAllergenPageCommand}" />
     </ContentPage.ToolbarItems>
-    <RefreshView x:DataType="local:AllergicHome" Command="{Binding LoadAllergensCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+    <RefreshView x:DataType="local:AllergicHomeViewModel" Command="{Binding LoadAllergensCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
         <ListView x:Name="ItemsListView"
-                ItemsSource="{Binding Allergens, Mode=TwoWay}"
+                ItemsSource="{Binding Allergens}"
                 SelectionMode="None">
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="model:Item">
-                    <TextCell Text="{Binding Text}" Command="{Binding BindingContext.ItemTapped, Source={x:Reference AllergicHome} }" CommandParameter="{Binding .}"/>
+                <DataTemplate x:DataType="model:Allergen">
+                    <TextCell Text="{Binding Name}" Command="{Binding BindingContext.AllergenTapped, Source={x:Reference AllergicHomeXML} }" CommandParameter="{Binding .}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

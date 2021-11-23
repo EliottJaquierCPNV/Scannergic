@@ -16,7 +16,7 @@ namespace ScannergicMobile.Views
         public AllergicHomeView()
         {
             InitializeComponent();
-            BindingContext = new AllergicHome();
+            BindingContext = new AllergicHomeViewModel();
         }
     }
 }

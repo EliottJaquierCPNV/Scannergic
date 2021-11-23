@@ -1,4 +1,5 @@
-﻿using ScannergicMobile.Services;
+﻿
+using ScannergicMobile.Models;
 using ScannergicMobile.Views;
 using System;
 using Xamarin.Forms;
@@ -12,8 +13,11 @@ namespace ScannergicMobile
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
+            AppManager.Init();
+            for (int i = 0; i < 100; i++)
+            {
+                AppManager.Me.AddAllergen(new Allergen(i,"Allergène "+i));;
+            }
             MainPage = new AppShell();
         }
 

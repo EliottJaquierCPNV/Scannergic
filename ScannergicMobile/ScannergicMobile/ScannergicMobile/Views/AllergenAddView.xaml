@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ScannergicMobile.Views.AllergenAddView">
+             x:Class="ScannergicMobile.Views.AllergenAddView"
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:ScannergicMobile.ViewModels"  
+             xmlns:model="clr-namespace:ScannergicMobile.Models"
+             x:Name="AllergicAdd">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
