@@ -4,25 +4,52 @@ using System.Text;
 
 namespace ScannergicMobile.Models
 {
+    /// <summary>
+    /// An Allergic is a Person who has allergies
+    /// </summary>
     public class Allergic
     {
         private List<Allergen> allergens;
 
+        /// <summary>
+        /// Instanciate Allergic
+        /// </summary>
         public Allergic()
         {
             allergens = new List<Allergen>();
         }
+
+        /// <summary>
+        /// Get the problematic Allergen
+        /// </summary>
         public List<Allergen> Allergens
         {
             get { return allergens; }
-            set { allergens = value; }
         }
 
-        public void AddAllergen(Allergen allergen)
+        /// <summary>
+        /// Add an Allergen
+        /// </summary>
+        /// <param name="allergen">The Allergen to add</param>
+        public void AddAllergen(Allergen allergen)//N'autorise pas les doublons
         {
             allergens.Add(allergen);
         }
 
+        /// <summary>
+        /// Remove an Allergen
+        /// </summary>
+        /// <param name="allergen">The Allergen to delete</param>
+        public void RemoveAllergen(Allergen allergen)
+        {
+            allergens.Remove(allergen);
+        }
+
+        /// <summary>
+        /// Get the problematic list of Allergen
+        /// </summary>
+        /// <param name="product">Return the list of problematic Allergen</param>
+        /// <returns></returns>
         public List<Allergen> FindProblematicAllergens(Product product)
         {
             List<Allergen> problematicAllergens = new List<Allergen>();
@@ -35,6 +62,21 @@ namespace ScannergicMobile.Models
                 }
             }
             return problematicAllergens;
+        }
+
+        /// <summary>
+        /// Is an allergen already in list ?
+        /// </summary>
+        /// <param name="allergenID">Allergen ID</param>
+        /// <returns>Bool of the result</returns>
+        private bool isAllergenInList(int allergenID)
+        {
+            foreach (var item in allergens)
+            {
+                if (item.Id == allergenID)
+                    return true;
+            }
+            return false;
         }
     }
 }

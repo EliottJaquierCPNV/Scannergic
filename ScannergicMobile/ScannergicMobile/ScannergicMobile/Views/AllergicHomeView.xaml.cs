@@ -18,5 +18,10 @@ namespace ScannergicMobile.Views
             InitializeComponent();
             BindingContext = new AllergicHomeViewModel();
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ((AllergicHomeViewModel)BindingContext).OnAppearing();
+        }
     }
 }

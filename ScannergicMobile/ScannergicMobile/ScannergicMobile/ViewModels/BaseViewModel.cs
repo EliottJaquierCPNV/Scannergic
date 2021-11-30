@@ -7,6 +7,9 @@ using Xamarin.Forms;
 
 namespace ScannergicMobile.ViewModels
 {
+    /// <summary>
+    /// Used to inheritance for all ViewModels
+    /// </summary>
     public class BaseViewModel : INotifyPropertyChanged
     {
         bool isBusy = false;

@@ -9,15 +9,13 @@ namespace ScannergicMobile
 {
     public partial class App : Application
     {
-
+        /// <summary>
+        /// Principal Entry point
+        /// </summary>
         public App()
         {
             InitializeComponent();
             AppManager.Init();
-            for (int i = 0; i < 100; i++)
-            {
-                AppManager.Me.AddAllergen(new Allergen(i,"Allergène "+i));;
-            }
             MainPage = new AppShell();
         }
 

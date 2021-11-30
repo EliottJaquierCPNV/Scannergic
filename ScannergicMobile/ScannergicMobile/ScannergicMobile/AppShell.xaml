@@ -35,7 +35,7 @@
     </TabBar>
 
     <TabBar>
-        <ShellContent Title="AA" Icon="icon_about.png" Route="AllergenAddView" ContentTemplate="{DataTemplate local:AllergenAddView}" />
+        <ShellContent Title="Ajouter un allergène" Icon="icon_about.png" Route="AllergenAddView" ContentTemplate="{DataTemplate local:AllergenAddView}" />
     </TabBar>
 
     <!--

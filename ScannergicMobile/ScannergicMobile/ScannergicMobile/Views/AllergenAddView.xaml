@@ -5,12 +5,19 @@
              Title="{Binding Title}"
              xmlns:local="clr-namespace:ScannergicMobile.ViewModels"  
              xmlns:model="clr-namespace:ScannergicMobile.Models"
-             x:Name="AllergicAdd">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Name="AllergicAddXML">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Retour" Command="{Binding ShowAllergicHomeViewCommand}" />
+    </ContentPage.ToolbarItems>
+    <RefreshView x:DataType="local:AllergicAddViewModel" Command="{Binding LoadAllergensCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <ListView x:Name="ItemsListView"
+                ItemsSource="{Binding Allergens}"
+                SelectionMode="None">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:Allergen">
+                    <TextCell Text="{Binding Name}" Command="{Binding BindingContext.AllergenTapped, Source={x:Reference AllergicAddXML} }" CommandParameter="{Binding .}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </RefreshView>
 </ContentPage>

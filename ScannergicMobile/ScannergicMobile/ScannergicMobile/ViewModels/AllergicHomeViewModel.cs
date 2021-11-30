@@ -8,37 +8,68 @@ using System.Threading.Tasks;
 
 namespace ScannergicMobile.ViewModels
 { 
+    /// <summary>
+    /// The ViewModel of the Home Page
+    /// </summary>
     public class AllergicHomeViewModel : BaseViewModel
     {
+        private ObservableCollection<Allergen> allergens;
+
+        /// <summary>
+        /// Get current allergens of an allergic
+        /// </summary>
+        public ObservableCollection<Allergen> Allergens
+        {
+            get { return allergens; }
+            set { SetProperty(ref allergens, value); }
+        }
+
+        /// <summary>
+        /// Call this to Show the add page
+        /// </summary>
         public Command ShowAddAllergenPageCommand { get; }
-        public ObservableCollection<Allergen> Allergens { get; set; }
+
+        /// <summary>
+        /// Call this to refresh allergens in the list
+        /// </summary>
         public Command LoadAllergensCommand { get; }
+
+        /// <summary>
+        /// Call this when allergen has been clicked
+        /// </summary>
         public Command<Allergen> AllergenTapped { get; }
 
+        /// <summary>
+        /// When the page load the first time, initialize display (and commands)
+        /// </summary>
         public AllergicHomeViewModel()
         {
             Title = "Allergies";
-            ExecuteLoadAllergens();
             LoadAllergensCommand = new Command(ExecuteLoadAllergens);
             ShowAddAllergenPageCommand = new Command(async () => await ShowAddAllergen());
             AllergenTapped = new Command<Allergen>(OnAllergenSelected);
         }
 
+        /// <summary>
+        /// When the page is displayed (used for refreshing)
+        /// </summary>
+        public void OnAppearing()
+        {
+            ExecuteLoadAllergens();
+        }
+
         private void OnAllergenSelected(Allergen obj)
         {
-            //int index = Allergens.IndexOf(obj);
-            Allergens.Remove(obj);
-            AppManager.Me.Allergens = new List<Allergen>(Allergens);
-            //Allergens[index] = obj;
-            //UpdateList();
+            AppManager.Me.RemoveAllergen(obj);
+            ExecuteLoadAllergens();
         }
-        void ExecuteLoadAllergens()
+        private void ExecuteLoadAllergens()
         {
             IsBusy = true;
             Allergens = new ObservableCollection<Allergen>(AppManager.Me.Allergens);
             IsBusy = false;
         }
-        async Task ShowAddAllergen()
+        private async Task ShowAddAllergen()
         {
             await Shell.Current.GoToAsync("//AllergenAddView");
         }

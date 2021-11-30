@@ -1,4 +1,5 @@
-﻿using ScannergicMobile.ViewModels;
+﻿using ScannergicMobile.Models;
+using ScannergicMobile.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,11 @@ namespace ScannergicMobile.Views
         {
             InitializeComponent();
             BindingContext = new AllergicAddViewModel();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ((AllergicAddViewModel)BindingContext).OnAppearing();
         }
     }
 }
