@@ -17,7 +17,7 @@ namespace ScannergicMobile.Services
         /// <summary>
         /// The principal server URL where the api is.
         /// </summary>
-        public const string SERVER_URL = "https://www.prevision-meteo.ch";
+        public const string SERVER_URL = "https://localhost:44374";
         
         /// <summary>
         /// Get the list of all Allergens 
@@ -28,24 +28,16 @@ namespace ScannergicMobile.Services
             List<Allergen> allergens = new List<Allergen>(0);
         
             HttpClient client = InitializeHttpClient();
-            HttpResponseMessage response = await client.GetAsync("/services/json/lat=46.259lng=5.235");
+            HttpResponseMessage response = await client.GetAsync("/scannergic/allergens");
             if (response.IsSuccessStatusCode)
             {
                 string jsonReponse = await response.Content.ReadAsStringAsync();
-                try
-                {
-                    allergens = JsonConvert.DeserializeObject<List<Allergen>>(jsonReponse);
-                }
-                catch (Newtonsoft.Json.JsonException)
-                {
-                    throw new ApiSerializationException();
-                }
+                allergens = JsonConvert.DeserializeObject<AllergensContainer>(jsonReponse).Allergens;
             }
             else
             {
                 throw new ServerException();
             }
-
             return allergens;
         }
 
