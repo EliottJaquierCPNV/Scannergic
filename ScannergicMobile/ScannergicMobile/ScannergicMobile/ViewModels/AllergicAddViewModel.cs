@@ -1,4 +1,5 @@
-﻿using ScannergicMobile.Models;
+﻿using Newtonsoft.Json;
+using ScannergicMobile.Models;
 using ScannergicMobile.Services;
 using System;
 using System.Collections.Generic;
@@ -72,9 +73,16 @@ namespace ScannergicMobile.ViewModels
         {
             IsBusy = true;
             ApiRequest api = new ApiRequest();
-            List<Allergen> allergens = await api.GetAllAllergensAsync();
-            Allergens = new ObservableCollection<Allergen>(allergens);
-            IsBusy = false;
+            try
+            {
+                List<Allergen> allergens = await api.GetAllAllergensAsync();
+                Allergens = new ObservableCollection<Allergen>(allergens);
+            }
+            catch (ApiRequestException exception){}
+            finally
+            {
+                IsBusy = false;
+            }
         }
         private void ShowAllergicHomeView()
         {
