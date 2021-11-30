@@ -78,7 +78,16 @@ namespace ScannergicMobile.ViewModels
                 List<Allergen> allergens = await api.GetAllAllergensAsync();
                 Allergens = new ObservableCollection<Allergen>(allergens);
             }
-            catch (ApiRequestException exception){}
+            catch (ApiRequestException exception){
+                await Application.Current.MainPage.DisplayAlert("Erreur!", "Le serveur n'a pas autorisé la connexion!", "Ok");
+            }
+            catch(JsonException exception)
+            {
+                await Application.Current.MainPage.DisplayAlert("Erreur!", "Le résultat que le serveur a renvoyé n'était pas attendu!", "Ok");
+            }catch(Exception e)
+            {
+                await Application.Current.MainPage.DisplayAlert("Erreur!", "Une erreur s'est produite :"+e.Message, "Ok");
+            }
             finally
             {
                 IsBusy = false;

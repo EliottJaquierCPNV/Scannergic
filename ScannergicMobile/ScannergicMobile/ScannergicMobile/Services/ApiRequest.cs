@@ -17,8 +17,8 @@ namespace ScannergicMobile.Services
         /// <summary>
         /// The principal server URL where the api is.
         /// </summary>
-        public const string SERVER_URL = "https://localhost:44374";
-        
+        public const string SERVER_URL = "http://192.168.42.221:49377";
+
         /// <summary>
         /// Get the list of all Allergens 
         /// </summary>
@@ -26,7 +26,7 @@ namespace ScannergicMobile.Services
         public async Task<List<Allergen>> GetAllAllergensAsync()
         {
             List<Allergen> allergens = new List<Allergen>(0);
-        
+
             HttpClient client = InitializeHttpClient();
             HttpResponseMessage response = await client.GetAsync("/scannergic/allergens");
             if (response.IsSuccessStatusCode)
@@ -54,5 +54,4 @@ namespace ScannergicMobile.Services
 
     public class ApiRequestException : Exception{}
     public class ServerException : ApiRequestException { }
-    public class ApiSerializationException : ApiRequestException { }
 }
