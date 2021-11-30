@@ -28,12 +28,13 @@ namespace ScannergicMobile.Models
         }
 
         /// <summary>
-        /// Add an Allergen
+        /// Add an Allergen (which is not a duplicate)
         /// </summary>
         /// <param name="allergen">The Allergen to add</param>
         public void AddAllergen(Allergen allergen)//N'autorise pas les doublons
         {
-            allergens.Add(allergen);
+            if(!isAllergenInList(allergen.Id))
+                allergens.Add(allergen);
         }
 
         /// <summary>

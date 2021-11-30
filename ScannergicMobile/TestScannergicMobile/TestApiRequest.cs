@@ -4,6 +4,7 @@ using ScannergicMobile.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace TestScannergicMobile
 {
@@ -17,13 +18,13 @@ namespace TestScannergicMobile
         }
 
         [Test]
-        public void GetAllAllergens_NominalCase_Pass()
+        public async Task GetAllAllergens_NominalCase_PassAsync()
         {
             //Given
             List<Allergen> allergensReturned;
 
             //When
-            allergensReturned = api.GetAllAllergens();
+            allergensReturned = await api.GetAllAllergensAsync();
 
             //Then
             Assert.IsTrue(allergensReturned != null);

@@ -45,7 +45,7 @@ namespace ScannergicMobile.ViewModels
         public AllergicAddViewModel()
         {
             Title = "Ajouter une allergie";
-            LoadAllergensCommand = new Command(ExecuteLoadAllergens);
+            LoadAllergensCommand = new Command(StartLoadAllergensAsync);
             AllergenTapped = new Command<Allergen>(OnAllergenSelected);
             ShowAllergicHomeViewCommand = new Command(ShowAllergicHomeView);
         }
@@ -55,7 +55,12 @@ namespace ScannergicMobile.ViewModels
         /// </summary>
         public void OnAppearing()
         {
-            ExecuteLoadAllergens();
+            StartLoadAllergensAsync();
+        }
+
+        private void StartLoadAllergensAsync()
+        {
+            Task t = ExecuteLoadAllergensAsync();
         }
 
         private void OnAllergenSelected(Allergen obj)
@@ -63,11 +68,11 @@ namespace ScannergicMobile.ViewModels
             AppManager.Me.AddAllergen(obj);
             ShowAllergicHomeView();
         }
-        private void ExecuteLoadAllergens()
+        private async Task ExecuteLoadAllergensAsync()
         {
             IsBusy = true;
             ApiRequest api = new ApiRequest();
-            List<Allergen> allergens = api.GetAllAllergens();
+            List<Allergen> allergens = await api.GetAllAllergensAsync();
             Allergens = new ObservableCollection<Allergen>(allergens);
             IsBusy = false;
         }

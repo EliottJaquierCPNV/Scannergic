@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using Newtonsoft.Json;
 namespace ScannergicMobile.Models
 {
     /// <summary>
@@ -14,6 +14,7 @@ namespace ScannergicMobile.Models
         /// <summary>
         /// Allergen's ID
         /// </summary>
+        [JsonProperty("id")]
         public int Id
         {
             get { return id; }
@@ -24,6 +25,7 @@ namespace ScannergicMobile.Models
         /// <summary>
         /// Allergen's Name
         /// </summary>
+        [JsonProperty("name")]
         public string Name
         {
             get { return name; }

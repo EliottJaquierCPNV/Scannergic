@@ -2,7 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 namespace ScannergicMobile.Services
 {
     /// <summary>
@@ -13,19 +17,35 @@ namespace ScannergicMobile.Services
         /// <summary>
         /// The principal server URL where the api is.
         /// </summary>
-        public const string SERVER_URL = "";
+        public const string SERVER_URL = "http://localhost:64195/";
 
         /// <summary>
         /// Get the list of all Allergens 
         /// </summary>
         /// <returns>The list of all allergens</returns>
-        public List<Allergen> GetAllAllergens()
+        public async Task<List<Allergen>> GetAllAllergensAsync()
         {
             List<Allergen> allergens = new List<Allergen>(0);
-            allergens.Add(new Allergen(1, "Arachides"));
-            allergens.Add(new Allergen(2, "Gluten"));
-            allergens.Add(new Allergen(3, "Oeufs"));
+
+            HttpClient client = InitializeHttpClient();
+            HttpResponseMessage response = await client.GetAsync("api/allergens");
+            if (response.IsSuccessStatusCode)
+            {
+                string jsonReponse = await response.Content.ReadAsStringAsync();
+                allergens = JsonConvert.DeserializeObject<List<Allergen>>(jsonReponse);
+            }
+
             return allergens;
+        }
+
+        private HttpClient InitializeHttpClient()
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(SERVER_URL);
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+            return client;
         }
     }
 }
