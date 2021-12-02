@@ -7,7 +7,7 @@
              xmlns:model="clr-namespace:ScannergicMobile.Models"
              x:Name="AllergicHomeXML">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Ajouter un allergène" Command="{Binding ShowAddAllergenPageCommand}" />
+        <ToolbarItem Text="Ajouter un allergène" Command="{Binding ShowAddAllergenPageCommand}" IconImageSource="icon_plus.png"/>
     </ContentPage.ToolbarItems>
     <RefreshView x:DataType="local:AllergicHomeViewModel" Command="{Binding LoadAllergensCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
         <ListView x:Name="ItemsListView"

@@ -7,7 +7,7 @@
              xmlns:model="clr-namespace:ScannergicMobile.Models"
              x:Name="AllergicAddXML">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Retour" Command="{Binding ShowAllergicHomeViewCommand}" />
+        <ToolbarItem Text="Retour" Command="{Binding ShowAllergicHomeViewCommand}"/>
     </ContentPage.ToolbarItems>
     <RefreshView x:DataType="local:AllergicAddViewModel" Command="{Binding LoadAllergensCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
         <ListView x:Name="ItemsListView"

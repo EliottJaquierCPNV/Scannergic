@@ -3,6 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <ApplicationIcon>appicon.ico</ApplicationIcon>
+    <AssemblyName>ScannergicMobile</AssemblyName>
+    <Company>EGameCreations</Company>
+    <Product>Scannergic</Product>
+    <Authors>Mikael Juillet, Eliott Jaquier, Nolan Evard</Authors>
+    <Description />
+    <Win32Resource />
   </PropertyGroup>
 
   <ItemGroup>

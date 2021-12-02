@@ -14,12 +14,12 @@
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Scondary}" />
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Secondary}" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
@@ -30,12 +30,12 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="Allergies" Icon="scannergicList.png" Route="AllergicHomeView" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
-        <ShellContent Title="Scanner" Icon="scannergicCode.png" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
+        <ShellContent Title="Allergies" Icon="icon_list.png" Route="AllergicHomeView" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
+        <ShellContent Title="Scanner" Icon="icon_qr.png" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
     </TabBar>
 
     <TabBar>
-        <ShellContent Title="Ajouter un allergène" Icon="icon_about.png" Route="AllergenAddView" ContentTemplate="{DataTemplate local:AllergenAddView}" />
+        <ShellContent Title="Ajouter un allergène" Icon="icon_list.png" Route="AllergenAddView" ContentTemplate="{DataTemplate local:AllergenAddView}" />
     </TabBar>
 
     <!--

@@ -7,10 +7,10 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#69d6ff</Color>
-            <Color x:Key="Scondary">#ff6d77</Color>
+            <Color x:Key="Primary">#2bb2e4</Color>
+            <Color x:Key="Secondary">#ff6d77</Color>
             <Style TargetType="Button">
-                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="TextColor" Value="Black"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
