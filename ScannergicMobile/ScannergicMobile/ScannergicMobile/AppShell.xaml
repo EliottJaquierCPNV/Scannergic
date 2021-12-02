@@ -14,7 +14,7 @@
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Scondary}" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
@@ -30,8 +30,8 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="Allergies" Icon="icon_about.png" Route="AllergicHomeView" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
-        <ShellContent Title="Scanner" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
+        <ShellContent Title="Allergies" Icon="scannergicList.png" Route="AllergicHomeView" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
+        <ShellContent Title="Scanner" Icon="scannergicCode.png" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
     </TabBar>
 
     <TabBar>
