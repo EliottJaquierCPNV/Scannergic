@@ -31,7 +31,7 @@
 
     <TabBar>
         <ShellContent Title="Allergies" Icon="icon_list.png" Route="AllergicHomeView" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
-        <ShellContent Title="Scanner" Icon="icon_qr.png" ContentTemplate="{DataTemplate local:AllergicHomeView}" />
+        <ShellContent Title="Scanner" Icon="icon_qr.png" Route="ProductScan" ContentTemplate="{DataTemplate local:ProductScan}" />
     </TabBar>
 
     <TabBar>
