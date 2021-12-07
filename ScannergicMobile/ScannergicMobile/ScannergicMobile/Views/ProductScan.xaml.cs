@@ -20,10 +20,10 @@ namespace ScannergicMobile.Views
         void ZXingScannerView_OnScanResult(ZXing.Result result)
         {
             Device.BeginInvokeOnMainThread(() => {
-                if(result.BarcodeFormat == ZXing.BarcodeFormat.EAN_13)
-                {
-                    DisplayAlert("Scanné!", result.Text);
-                }
+                //if(result.BarcodeFormat == ZXing.BarcodeFormat.EAN_13)
+                //{
+                    DisplayAlert("Scanné!", result.Text+" type:"+result.BarcodeFormat.ToString());
+                //}
             });
         }
 
