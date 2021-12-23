@@ -10,7 +10,9 @@
     <Authors>Mikael Juillet, Eliott Jaquier, Nolan Evard</Authors>
     <Description />
     <Win32Resource />
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>scannergicRelease.pfx</AssemblyOriginatorKeyFile>
+    <Configurations>Debug;Release;Master</Configurations>
   </PropertyGroup>
 
   <ItemGroup>

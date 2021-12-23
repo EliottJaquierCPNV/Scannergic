@@ -42,6 +42,7 @@
     <AndroidSigningStorePass>scannergicRelease</AndroidSigningStorePass>
     <AndroidSigningKeyAlias>scannergicRelease</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>scannergicRelease</AndroidSigningKeyPass>
+    <MandroidI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,6 +62,29 @@
     <AndroidSigningStorePass>scannergicRelease</AndroidSigningStorePass>
     <AndroidSigningKeyAlias>scannergicRelease</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>scannergicRelease</AndroidSigningKeyPass>
+    <MandroidI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Master|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Master\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <DebugType>portable</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <LangVersion>8.0</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidKeyStore>true</AndroidKeyStore>
+    <AndroidSigningKeyStore>C:\Users\Eliott.JAQUIER\Downloads\scannergicRelease.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>scannergicRelease</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>scannergicRelease</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>scannergicRelease</AndroidSigningKeyPass>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
