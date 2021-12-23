@@ -37,6 +37,11 @@
     <EnableLLVM>false</EnableLLVM>
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
+    <AndroidKeyStore>false</AndroidKeyStore>
+    <AndroidSigningKeyStore>C:\Users\Eliott.JAQUIER\Downloads\scannergicRelease.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>scannergicRelease</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>scannergicRelease</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>scannergicRelease</AndroidSigningKeyPass>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,6 +56,11 @@
     <EnableLLVM>false</EnableLLVM>
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
+    <AndroidKeyStore>true</AndroidKeyStore>
+    <AndroidSigningKeyStore>C:\Users\Eliott.JAQUIER\Downloads\scannergicRelease.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>scannergicRelease</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>scannergicRelease</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>scannergicRelease</AndroidSigningKeyPass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />

@@ -10,6 +10,7 @@
     <Authors>Mikael Juillet, Eliott Jaquier, Nolan Evard</Authors>
     <Description />
     <Win32Resource />
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>

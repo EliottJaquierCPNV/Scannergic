@@ -17,7 +17,7 @@ namespace ScannergicMobile.Services
         /// <summary>
         /// The principal server URL where the api is.
         /// </summary>
-        public const string SERVER_URL = "http://192.168.42.221:49377";
+        public const string SERVER_URL = "https://scannergic.diduno.education/";
 
         /// <summary>
         /// Get the list of all Allergens 
@@ -28,7 +28,7 @@ namespace ScannergicMobile.Services
             List<Allergen> allergens = new List<Allergen>(0);
 
             HttpClient client = InitializeHttpClient();
-            HttpResponseMessage response = await client.GetAsync("/scannergic/allergens");
+            HttpResponseMessage response = await client.GetAsync("/api/allergens");
             if (response.IsSuccessStatusCode)
             {
                 string jsonReponse = await response.Content.ReadAsStringAsync();
