@@ -38,6 +38,10 @@
         <ShellContent Title="Ajouter un allergène" Icon="icon_list.png" Route="AllergenAddView" ContentTemplate="{DataTemplate local:AllergenAddView}" />
     </TabBar>
 
+    <TabBar>
+        <ShellContent Title="Résultat du scan" Icon="icon_qr.png" Route="ScanResultView" ContentTemplate="{DataTemplate local:ScanResultView}" />
+    </TabBar>
+
     <!--
         If you would like to navigate to this content you can do so by calling
         await Shell.Current.GoToAsync("//LoginPage");

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScannergicMobile.Views.ScanResultView"
+             Title="{Binding Title}"
+             x:Name="AllergicScanResultXML"
+             xmlns:local="clr-namespace:ScannergicMobile.ViewModels"  
+             xmlns:model="clr-namespace:ScannergicMobile.Models"
+             x:DataType="local:ScanResultViewModel"
+             xmlns:Helpers="clr-namespace:ScannergicMobile.Utils">
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator IsRunning="True" IsVisible="{Binding IsWaiting}" VerticalOptions="CenterAndExpand"/>
+            <StackLayout IsVisible="{Binding HasProductInfos}">
+
+                <StackLayout BackgroundColor="red" IsVisible="{Binding IsProductOK, Converter={Helpers:InverseBoolConverter}}" >
+                    <Label Text="Dangereux" HorizontalOptions="Center" TextColor="White" Margin="20" FontSize="50"/>
+                </StackLayout>
+                <StackLayout BackgroundColor="#5B5" IsVisible="{Binding IsProductOK}" >
+                    <Label Text="Aucun allergène détecté" TextColor="White" HorizontalOptions="Center" Margin="20" FontSize="30"/>
+                </StackLayout>
+                <ListView x:Name="ItemsListView" ItemsSource="{Binding AllergensInProduct}" SelectionMode="Single">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Allergen">
+                            <ViewCell>
+                                <StackLayout VerticalOptions="Center">
+                                    <Label Text="{Binding Name}" HorizontalOptions="Center" FontSize="Medium" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout IsVisible="{Binding IsProductNotFound}">
+                <StackLayout BackgroundColor="Orange">
+                    <Label Text="Produit non-trouvé" HorizontalOptions="Center" TextColor="Black" Margin="20" FontSize="30"/>
+                </StackLayout>
+                <Button Text="Ajout indisponible pour le moment" TextColor="White" FontSize="Medium" Margin="5" IsEnabled="False" BackgroundColor="Gray"></Button>
+            </StackLayout>
+            <Button Text="OK" TextColor="White" FontSize="Medium" Command="{Binding ShowAllergicHomeViewCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

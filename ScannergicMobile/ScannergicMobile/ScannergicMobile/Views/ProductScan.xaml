@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScannergicMobile.Views.ProductScan"
              xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
-             Title="Scanner le produit">
+             Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout>
-            <zxing:ZXingScannerView IsScanning="True" OnScanResult="ZXingScannerView_OnScanResult"></zxing:ZXingScannerView>
+            <zxing:ZXingScannerView IsScanning="{Binding IsScanning}" OnScanResult="ZXingScannerView_OnScanResult"></zxing:ZXingScannerView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

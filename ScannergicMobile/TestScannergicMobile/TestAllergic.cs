@@ -7,17 +7,17 @@ namespace TestScannergicMobile
 {
     public class TestAllergic
     {
+        Allergic allergic;
         [SetUp]
         public void Setup()
         {
-            
+            allergic = new Allergic();
         }
 
         [Test]
         public void Allergens_NominalCase_Pass()
         {
             //given
-            Allergic allergic = new Allergic();
             List<Allergen> actualAllergens;
 
             //when
@@ -31,7 +31,6 @@ namespace TestScannergicMobile
         public void AddAllergens_NominalCase_Pass()
         {
             //given
-            Allergic allergic = new Allergic();
             Allergen actualAllergens = new Allergen(1,"Arachides");
             Allergen expectedAllergens;
 
@@ -47,7 +46,6 @@ namespace TestScannergicMobile
         public void AddAllergens_DuplicateValue_Pass()
         {
             //given
-            Allergic allergic = new Allergic();
             Allergen allergen = new Allergen(1, "Arachides");
             List<Allergen> actualList;
             allergic.AddAllergen(allergen);
@@ -64,7 +62,6 @@ namespace TestScannergicMobile
         public void RemoveAllergens_NominalCase_Pass()
         {
             //given
-            Allergic allergic = new Allergic();
             Allergen allergen = new Allergen(1, "Arachides");
             List<Allergen> actualList;
             allergic.AddAllergen(allergen);
@@ -75,6 +72,63 @@ namespace TestScannergicMobile
 
             //then
             Assert.IsTrue(actualList.Count == 0);
+        }
+
+        [Test]
+        public void FindProblematicAllergens_FoundProblematicAllergen_Pass()
+        {
+            //given
+            Allergen arachides = new Allergen(1, "Arachides");
+            Allergen gluten = new Allergen(2, "Gluten");
+            allergic.AddAllergen(arachides);
+            allergic.AddAllergen(gluten);
+            List<Allergen> productAllergens = new List<Allergen>() { arachides };
+            List<Allergen> expectedProblematicAllergens = new List<Allergen>() { arachides };
+            List<Allergen> actualProblematicAllergens;
+
+            //when
+            actualProblematicAllergens = allergic.FindProblematicAllergens(productAllergens);
+
+            //then
+            Assert.AreEqual(expectedProblematicAllergens, actualProblematicAllergens);
+        }
+
+        [Test]
+        public void FindProblematicAllergens_FoundProblematicAllergens_Pass()
+        {
+            //given
+            Allergen arachides = new Allergen(1, "Arachides");
+            Allergen gluten = new Allergen(2, "Gluten");
+            allergic.AddAllergen(arachides);
+            allergic.AddAllergen(gluten);
+            List<Allergen> productAllergens = new List<Allergen>() { arachides, gluten };
+            List<Allergen> expectedProblematicAllergens = new List<Allergen>() { arachides, gluten };
+            List<Allergen> actualProblematicAllergens;
+
+            //when
+            actualProblematicAllergens = allergic.FindProblematicAllergens(productAllergens);
+
+            //then
+            Assert.AreEqual(expectedProblematicAllergens, actualProblematicAllergens);
+        }
+
+        [Test]
+        public void FindProblematicAllergens_NoProblematicAllergens_Pass()
+        {
+            //given
+            Allergen arachides = new Allergen(1, "Arachides");
+            Allergen gluten = new Allergen(2, "Gluten");
+            Allergen oeufs = new Allergen(3, "Oeufs");
+            allergic.AddAllergen(arachides);
+            List<Allergen> productAllergens = new List<Allergen>() { gluten, oeufs };
+            List<Allergen> expectedProblematicAllergens = new List<Allergen>() {};
+            List<Allergen> actualProblematicAllergens;
+
+            //when
+            actualProblematicAllergens = allergic.FindProblematicAllergens(productAllergens);
+
+            //then
+            Assert.AreEqual(expectedProblematicAllergens, actualProblematicAllergens);
         }
     }
 }

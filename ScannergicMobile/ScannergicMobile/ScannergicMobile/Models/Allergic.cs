@@ -49,13 +49,14 @@ namespace ScannergicMobile.Models
         /// <summary>
         /// Get the problematic list of Allergen
         /// </summary>
-        /// <param name="product">Return the list of problematic Allergen</param>
-        /// <returns></returns>
-        public List<Allergen> FindProblematicAllergens(Product product)
+        /// <param name="product">The list of all Allergens in the product</param>
+        /// <returns>Return the list of problematic Allergen</returns>
+        public List<Allergen> FindProblematicAllergens(List<Allergen> product)
         {
             List<Allergen> problematicAllergens = new List<Allergen>();
-            foreach (Allergen allergen in product.Allergens)
+            foreach (Allergen allergen in product)
             {
+                //TODO : Optimize for only one foreach ?
                 foreach (Allergen problematicAllergen in allergens)
                 {
                     if (problematicAllergen.Id == allergen.Id)
