@@ -36,22 +36,16 @@ namespace TestScannergicMobile
             List<Allergen> allergensReturned;
 
             //When
-            allergensReturned = await api.GetAllergensInProduct("7612345678900");
+            allergensReturned = await api.GetAllergensInProduct("7612345978900");
 
             //Then
             Assert.IsTrue(allergensReturned != null);
         }
         [Test]
-        public async Task GetAllergensInProduct_ProductNotFound_PassAsync()
+        public void GetAllergensInProduct_ProductNotFound_Pass()
         {
-            //Given
-            List<Allergen> allergensReturned;
-
-            //When
-            allergensReturned = await api.GetAllergensInProduct("7612345678901");
-
-            //Then
-            Assert.IsTrue(allergensReturned != null);
+            //When + Then
+            Assert.ThrowsAsync<ResourceNotFoundException>(() => api.GetAllergensInProduct("7612345978901"));
         }
     }
 }

@@ -17,7 +17,7 @@ namespace ScannergicMobile.Services
         /// <summary>
         /// The principal server URL where the api is.
         /// </summary>
-        public const string SERVER_URL = "https://scannergic.diduno.education/";
+        public const string SERVER_URL = "https://localhost:5001";
 
         /// <summary>
         /// Get the list of all Allergens 
