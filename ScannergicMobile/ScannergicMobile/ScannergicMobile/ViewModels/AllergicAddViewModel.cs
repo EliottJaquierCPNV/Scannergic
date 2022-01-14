@@ -75,7 +75,7 @@ namespace ScannergicMobile.ViewModels
             ApiRequest api = new ApiRequest();
             try
             {
-                //TODO : True api call
+                //TODO : API
                 //List<Allergen> allergens = await api.GetAllAllergensAsync();
                 List<Allergen> allergens = new List<Allergen>();
                 allergens.Add(new Allergen(1, "AA"));
@@ -83,12 +83,12 @@ namespace ScannergicMobile.ViewModels
                 allergens.Add(new Allergen(3, "CC"));
                 Allergens = new ObservableCollection<Allergen>(allergens);
             }
-            catch (ApiRequestException exception){
+            catch (ApiRequestException){
                 await Application.Current.MainPage.DisplayAlert("Erreur!", "Le serveur n'a pas autorisé la connexion!", "Ok");
             }
-            catch(JsonException exception)
+            catch(JsonException)
             {
-                await Application.Current.MainPage.DisplayAlert("Erreur!", "Le résultat que le serveur a renvoyé n'était pas attendu!", "Ok");
+                await Application.Current.MainPage.DisplayAlert("Erreur!", "Le résultat que le serveur a renvoyé n'était pas celui attendu!", "Ok");
             }catch(Exception e)
             {
                 await Application.Current.MainPage.DisplayAlert("Erreur!", "Une erreur s'est produite :"+e.Message, "Ok");

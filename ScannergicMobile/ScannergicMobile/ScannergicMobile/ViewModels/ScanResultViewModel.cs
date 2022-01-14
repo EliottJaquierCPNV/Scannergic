@@ -96,7 +96,7 @@ namespace ScannergicMobile.ViewModels
         {
             IsWaiting = true;
             Barcode = barcode;
-            ExecuteLoadAllergensAsync();
+            _ = ExecuteLoadAllergensAsync();
         }
         private async Task ExecuteLoadAllergensAsync()
         {
@@ -104,7 +104,8 @@ namespace ScannergicMobile.ViewModels
             ApiRequest api = new ApiRequest();
             try
             {
-                //List<Allergen> allergens = await api.GetAllAllergensAsync();
+                //TODO : API
+                //List<Allergen> allAllergens = await api.GetAllergensInProduct(barcode);
                 List<Allergen> allAllergens = new List<Allergen>();
                 allAllergens.Add(new Allergen(1, "AA"));
                 allAllergens.Add(new Allergen(3, "CC"));
@@ -115,11 +116,17 @@ namespace ScannergicMobile.ViewModels
                 IsProductOK = problematicAllergens.Count == 0;
                 AllergensInProduct = new ObservableCollection<Allergen>(allAllergens);
             }
-            catch (ApiRequestException exception)
+            catch (ServerException)
             {
                 await Application.Current.MainPage.DisplayAlert("Erreur!", "Le serveur n'a pas autorisé la connexion!", "Ok");
             }
-            catch (JsonException exception)
+            catch (ResourceNotFoundException)
+            {
+                HasProductInfos = false;
+                IsProductNotFound = true;
+                AllergensInProduct = new ObservableCollection<Allergen>();
+            }
+            catch (JsonException)
             {
                 await Application.Current.MainPage.DisplayAlert("Erreur!", "Le résultat que le serveur a renvoyé n'était pas attendu!", "Ok");
             }

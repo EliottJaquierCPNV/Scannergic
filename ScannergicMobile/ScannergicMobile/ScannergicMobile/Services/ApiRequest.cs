@@ -25,20 +25,40 @@ namespace ScannergicMobile.Services
         /// <returns>The list of all allergens</returns>
         public async Task<List<Allergen>> GetAllAllergensAsync()
         {
-            List<Allergen> allergens = new List<Allergen>(0);
+            return await GetAllergensRoute();
+        }
+
+        /// <summary>
+        /// Get a list of allergens in a product
+        /// </summary>
+        /// <param name="barcode">The product barcode</param>
+        /// <returns>The list of allergens contained in the product</returns>
+        public async Task<List<Allergen>> GetAllergensInProduct(string barcode)
+        {
+            return await GetAllergensRoute(barcode);
+        }
+
+        /// <summary>
+        /// Get the /api/allergens route in the API
+        /// </summary>
+        /// <param name="parameters">The filter for allergen</param>
+        /// <returns>The list of allergens (all or with the parameter filter)</returns>
+        private async Task<List<Allergen>> GetAllergensRoute(string parameters = ""){
+            string urlConstructor = "/api/allergens";
+            if(parameters.Length>0)
+                            urlConstructor = urlConstructor+"/"+ parameters;
 
             HttpClient client = InitializeHttpClient();
-            HttpResponseMessage response = await client.GetAsync("/api/allergens");
+            HttpResponseMessage response = await client.GetAsync(urlConstructor);
             if (response.IsSuccessStatusCode)
             {
                 string jsonReponse = await response.Content.ReadAsStringAsync();
-                allergens = JsonConvert.DeserializeObject<AllergensContainer>(jsonReponse).Allergens;
+                return JsonConvert.DeserializeObject<AllergensContainer>(jsonReponse).Allergens;
             }
+            else if (response.StatusCode == HttpStatusCode.NotFound)
+                throw new ResourceNotFoundException();
             else
-            {
                 throw new ServerException();
-            }
-            return allergens;
         }
 
         private HttpClient InitializeHttpClient()
@@ -54,4 +74,5 @@ namespace ScannergicMobile.Services
 
     public class ApiRequestException : Exception{}
     public class ServerException : ApiRequestException { }
+    public class ResourceNotFoundException : ApiRequestException { }
 }
