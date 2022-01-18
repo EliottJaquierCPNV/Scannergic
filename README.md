@@ -24,7 +24,7 @@ An android SDK (included in android studio : https://developer.android.com/studi
 
 An android phone to test [Phone setup on Xamarin](https://dotnet.microsoft.com/en-us/learn/xamarin/hello-world-tutorial/devicesetup) :
  - A physical phone with USB debugging enabled [Link to USB debugging](https://www.frandroid.com/comment-faire/tutoriaux/229753_questcequelemodedebogageusb)
- - An emulator 
+ - Or an emulator 
 
 #### To open documentations
 - Balsamiq Wireframe / Mockup
@@ -40,9 +40,9 @@ Make sure git lfs is installed (git lfs is used for the images in this project)
 ``` bash
 git lfs install
 ```
-Switch the 'developp' branch
+Switch the 'develop' branch
 ``` bash
-git checkout developp
+git checkout develop
 ```
 
 #### Tests
