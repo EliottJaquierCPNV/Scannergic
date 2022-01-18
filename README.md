@@ -75,12 +75,12 @@ When the emulator is started, click on the new play button is Visual Studio
 ![unknown](https://user-images.githubusercontent.com/61775618/149954617-f8dc1884-c55f-421f-8282-b3fac6fd27a5.png)
 
 
-#### Note for tests
+### Note for tests
 For the tests to succeed, the url 'https://scannergic.diduno.education/' must be accessible (it may not work depending on the schedule)
 
 If the API (Scannergic.diduno.education) is not accessible, all tests will succeed except those contained in the test class 'TestApiRequest'
 
-#### Note for the scan
+### Note for the scan
 During the first scan and camera permission request, the application crashes. This is a known bug. Restart the application and the scan will work perfectly.
 
 ![image](https://user-images.githubusercontent.com/61775618/149954955-d8377eb9-e2c0-44f2-a383-731a66d0d32b.png)
