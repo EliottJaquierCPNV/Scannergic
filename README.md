@@ -92,6 +92,9 @@ Move the mouse to move the head and press W,A,S,D to move
 ![image](https://user-images.githubusercontent.com/61775618/149956031-5c7a496a-1da6-4a20-9dba-61528e2f8d9e.png)
 
 For scanning a product, you will need to change the image in the emulator. Go to the settings/camera/ and add the product EAN13 code. (Under Doc\TestEAN13Code, you will have the demo codes)
+
 ![image](https://user-images.githubusercontent.com/61775618/149956223-af94204d-c322-4140-80b7-82144c0ad1fd.png)
+
 ![image](https://user-images.githubusercontent.com/61775618/149956334-a9ed522f-99c7-4cbd-808b-0ade4f918d80.png)
+
 
