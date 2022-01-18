@@ -79,7 +79,9 @@ namespace ScannergicMobile.ViewModels
             get { return isProductOK; }
             set { SetProperty(ref isProductOK, value); }
         }
-
+        /// <summary>
+        /// Instantiate the scanresult page
+        /// </summary>
         public ScanResultViewModel()
         {
             IsWaiting = true;
@@ -104,11 +106,7 @@ namespace ScannergicMobile.ViewModels
             ApiRequest api = new ApiRequest();
             try
             {
-                //TODO : API
-                //List<Allergen> allAllergens = await api.GetAllergensInProduct(barcode);
-                List<Allergen> allAllergens = new List<Allergen>();
-                allAllergens.Add(new Allergen(1, "AA"));
-                allAllergens.Add(new Allergen(3, "CC"));
+                List<Allergen> allAllergens = await api.GetAllergensInProduct(barcode);
 
                 HasProductInfos = true;
                 IsProductNotFound = false;

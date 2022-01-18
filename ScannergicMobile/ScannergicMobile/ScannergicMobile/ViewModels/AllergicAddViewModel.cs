@@ -75,12 +75,7 @@ namespace ScannergicMobile.ViewModels
             ApiRequest api = new ApiRequest();
             try
             {
-                //TODO : API
-                //List<Allergen> allergens = await api.GetAllAllergensAsync();
-                List<Allergen> allergens = new List<Allergen>();
-                allergens.Add(new Allergen(1, "AA"));
-                allergens.Add(new Allergen(2, "BB"));
-                allergens.Add(new Allergen(3, "CC"));
+                List<Allergen> allergens = await api.GetAllAllergensAsync();
                 Allergens = new ObservableCollection<Allergen>(allergens);
             }
             catch (ApiRequestException){

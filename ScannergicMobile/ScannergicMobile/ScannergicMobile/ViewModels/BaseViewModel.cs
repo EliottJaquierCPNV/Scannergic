@@ -13,6 +13,9 @@ namespace ScannergicMobile.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         bool isBusy = false;
+        /// <summary>
+        /// Is the app is busy with a task
+        /// </summary>
         public bool IsBusy
         {
             get { return isBusy; }
@@ -20,6 +23,9 @@ namespace ScannergicMobile.ViewModels
         }
 
         string title = string.Empty;
+        /// <summary>
+        /// Title of the page
+        /// </summary>
         public string Title
         {
             get { return title; }
@@ -40,6 +46,9 @@ namespace ScannergicMobile.ViewModels
         }
 
         #region INotifyPropertyChanged
+        /// <summary>
+        /// When a protery has changed (used to reload XAML)
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {

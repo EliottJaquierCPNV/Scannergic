@@ -5,6 +5,9 @@ using NUnit.Framework;
 using ScannergicMobile.Models;
 namespace TestScannergicMobile
 {
+    /// <summary>
+    /// Test the Allergic model class
+    /// </summary>
     public class TestAllergic
     {
         Allergic allergic;
@@ -14,6 +17,9 @@ namespace TestScannergicMobile
             allergic = new Allergic();
         }
 
+        /// <summary>
+        /// Test if the Allergens getter is accessible
+        /// </summary>
         [Test]
         public void Allergens_NominalCase_Pass()
         {
@@ -27,6 +33,9 @@ namespace TestScannergicMobile
             Assert.IsTrue(actualAllergens != null);
         }
 
+        /// <summary>
+        /// Adding a new allergen successfully
+        /// </summary>
         [Test]
         public void AddAllergens_NominalCase_Pass()
         {
@@ -41,7 +50,9 @@ namespace TestScannergicMobile
             //then
             Assert.AreEqual(actualAllergens,expectedAllergens);
         }
-
+        /// <summary>
+        /// Adding a new duplicated allergen not taken into consideration
+        /// </summary>
         [Test]
         public void AddAllergens_DuplicateValue_Pass()
         {
@@ -57,7 +68,9 @@ namespace TestScannergicMobile
             //then
             Assert.IsTrue(actualList.Count == 1);
         }
-
+        /// <summary>
+        /// Removing an allergen
+        /// </summary>
         [Test]
         public void RemoveAllergens_NominalCase_Pass()
         {
@@ -73,7 +86,9 @@ namespace TestScannergicMobile
             //then
             Assert.IsTrue(actualList.Count == 0);
         }
-
+        /// <summary>
+        /// Test the 'FindProblematicAllergens' method with problematic allergen found
+        /// </summary>
         [Test]
         public void FindProblematicAllergens_FoundProblematicAllergen_Pass()
         {
@@ -92,7 +107,9 @@ namespace TestScannergicMobile
             //then
             Assert.AreEqual(expectedProblematicAllergens, actualProblematicAllergens);
         }
-
+        /// <summary>
+        /// Test the 'FindProblematicAllergens' method with multiple problematic allergens found
+        /// </summary>
         [Test]
         public void FindProblematicAllergens_FoundProblematicAllergens_Pass()
         {
@@ -111,7 +128,9 @@ namespace TestScannergicMobile
             //then
             Assert.AreEqual(expectedProblematicAllergens, actualProblematicAllergens);
         }
-
+        /// <summary>
+        /// Test the 'FindProblematicAllergens' method with no problematic allergen found
+        /// </summary>
         [Test]
         public void FindProblematicAllergens_NoProblematicAllergens_Pass()
         {

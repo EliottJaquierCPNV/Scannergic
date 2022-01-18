@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace TestScannergicMobile
 {
+    /// <summary>
+    /// The the ApiRequest class
+    /// </summary>
     public class TestApiRequest
     {
         ApiRequest api;
@@ -17,6 +20,10 @@ namespace TestScannergicMobile
             api = new ApiRequest();
         }
 
+        /// <summary>
+        /// Test getting all allergens 
+        /// </summary>
+        /// <returns>The async task (waiting to the web API time)</returns>
         [Test]
         public async Task GetAllAllergens_NominalCase_PassAsync()
         {
@@ -29,6 +36,10 @@ namespace TestScannergicMobile
             //Then
             Assert.IsTrue(allergensReturned != null);
         }
+        /// <summary>
+        /// Finding allergens in a product (founded)
+        /// </summary>
+        /// <returns>The async task (waiting to the web API time)</returns>
         [Test]
         public async Task GetAllergensInProduct_ProductFound_PassAsync()
         {
@@ -41,6 +52,9 @@ namespace TestScannergicMobile
             //Then
             Assert.IsTrue(allergensReturned != null);
         }
+        /// <summary>
+        /// Finding allergens in a product (product not found)
+        /// </summary>
         [Test]
         public void GetAllergensInProduct_ProductNotFound_Pass()
         {
