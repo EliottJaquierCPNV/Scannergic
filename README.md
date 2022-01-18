@@ -17,15 +17,30 @@ This android app will request the API of the 'Scannergic Backend' project and di
 ![SchémadePrincipe2](https://user-images.githubusercontent.com/61775725/141955527-72237c5a-a55d-431d-a332-4cf52c142d89.png)
 
 ## Prerequisites to collaborate 
-Visual Studio (2019 community is used)
-With packages :
- - Mobile developpement .NET (Xamarin)
+visual Studio (2019 community is used) with packages :
+ - Mobile developpement .NET (Xamarin) [Install xamarin package](https://dotnet.microsoft.com/en-us/learn/xamarin/hello-world-tutorial/install)
 
 An android SDK (included in android studio : https://developer.android.com/studio)
+
+An android phone to test [Phone setup on Xamarin](https://dotnet.microsoft.com/en-us/learn/xamarin/hello-world-tutorial/devicesetup) :
+ - A physical phone with USB debugging enabled [Link to USB debugging](https://www.frandroid.com/comment-faire/tutoriaux/229753_questcequelemodedebogageusb)
+ - An emulator 
 
 #### To open documentations
 - Balsamiq Wireframe / Mockup
 - Draw.io / Diagrams.net
 - Astah Community / UML
 
-#### Build and deploy your app
+#### First build and deploying
+Clone the project
+``` bash
+git clone https://github.com/EliottJaquierCPNV/Scannergic.git
+```
+Make sure git lfs is installed (git lfs is used for the images in this project)
+``` bash
+git lfs install
+```
+Switch the 'developp' branch
+``` bash
+git checkout developp
+```
