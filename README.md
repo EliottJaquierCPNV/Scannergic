@@ -20,6 +20,7 @@ This android app will request the API of the 'Scannergic Backend' project and di
 Visual Studio (2019 community is used)
 With packages :
  - Mobile developpement .NET (Xamarin)
+
 An android SDK (included in android studio : https://developer.android.com/studio)
 
 #### To open documentations
