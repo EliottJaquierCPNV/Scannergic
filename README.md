@@ -47,4 +47,5 @@ git checkout develop
 
 #### Tests
 For the tests to succeed, the url 'https://scannergic.diduno.education/' must be accessible (it may not work depending on the schedule)
+
 If the API (Scannergic.diduno.education) is not accessible, all tests will succeed except those contained in the test class 'TestApiRequest'
