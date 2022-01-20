@@ -10,6 +10,7 @@
     <Authors>Mikael Juillet, Eliott Jaquier, Nolan Evard</Authors>
     <Description />
     <Win32Resource />
+    <Configurations>Debug;Release;Master</Configurations>
   </PropertyGroup>
 
   <ItemGroup>

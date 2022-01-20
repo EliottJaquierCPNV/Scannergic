@@ -47,7 +47,7 @@ namespace TestScannergicMobile
             List<Allergen> allergensReturned;
 
             //When
-            allergensReturned = await api.GetAllergensInProduct("7612345978900");
+            allergensReturned = await api.GetAllergensInProduct("7612345978901");
 
             //Then
             Assert.IsTrue(allergensReturned != null);

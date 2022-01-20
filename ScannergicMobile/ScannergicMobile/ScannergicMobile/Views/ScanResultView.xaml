@@ -24,7 +24,7 @@
                         <DataTemplate x:DataType="model:Allergen">
                             <ViewCell>
                                 <StackLayout VerticalOptions="Center">
-                                    <Label Text="{Binding Name}" HorizontalOptions="Center" FontSize="Medium" VerticalOptions="Center"/>
+                                    <Label Text="{Binding Name}" TextColor="Black" HorizontalOptions="Center" FontSize="Medium" VerticalOptions="Center"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
