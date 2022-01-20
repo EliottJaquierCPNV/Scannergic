@@ -70,7 +70,7 @@ Start for the first time the emulator
 
 ![unknown](https://user-images.githubusercontent.com/61775618/149954536-0b964de2-6ada-4709-b1ab-d2a96f4b3986.png)
 
-When the emulator is started, click on the new play button is Visual Studio
+When the emulator is started, click on the new play button in Visual Studio
 
 ![unknown](https://user-images.githubusercontent.com/61775618/149954617-f8dc1884-c55f-421f-8282-b3fac6fd27a5.png)
 
