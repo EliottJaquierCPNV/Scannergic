@@ -59,7 +59,7 @@ namespace TestScannergicMobile
         public void GetAllergensInProduct_ProductNotFound_Pass()
         {
             //When + Then
-            Assert.ThrowsAsync<ResourceNotFoundException>(() => api.GetAllergensInProduct("7612345978901"));
+            Assert.ThrowsAsync<ResourceNotFoundException>(() => api.GetAllergensInProduct("7612345978100"));
         }
     }
 }
