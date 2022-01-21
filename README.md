@@ -70,10 +70,16 @@ Start for the first time the emulator
 
 ![unknown](https://user-images.githubusercontent.com/61775618/149954536-0b964de2-6ada-4709-b1ab-d2a96f4b3986.png)
 
-When the emulator is started, click on the new play button in Visual Studio
+When the emulator is started, click on the new play button in Visual Studio.
 
 ![unknown](https://user-images.githubusercontent.com/61775618/149954617-f8dc1884-c55f-421f-8282-b3fac6fd27a5.png)
 
+If you have a deployment error, look at the points below:
+- Make sure you have started the emulator (it should be on the home page)
+- Try deploying again 1 minute after the first failed deployment. (In some cases, the first deployment fails because it activated an emulator initialization procedure) 
+- You don't have a valid key for the application (See 'Note for deploying')
+
+From now on, the application should run on the emulator! See the 'Note for the scan' section during the first scan.
 
 ### Note for tests
 For the tests to succeed, the url 'https://scannergic.diduno.education/' must be accessible (it may not work depending on the schedule)
