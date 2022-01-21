@@ -98,3 +98,12 @@ For scanning a product, you will need to change the image in the emulator. Go to
 ![image](https://user-images.githubusercontent.com/61775618/149956334-a9ed522f-99c7-4cbd-808b-0ade4f918d80.png)
 
 
+### Note for deploying
+
+If you want to sign you app for deployement or you have an error like this :	XA4310: `$(AndroidSigningKeyStore)` file `...` could not be found (This mean that the project a signing key. The key is not on the depot for security), you will need to change the key or delete it.
+
+![image](https://user-images.githubusercontent.com/61775618/150487703-a1fa3bf2-6bd3-48ac-9cb5-d554daea37ac.png)
+
+Change it or disable the option.
+
+![image](https://user-images.githubusercontent.com/61775618/150486463-a9c0fee8-e87a-4a29-a674-597d60707a92.png)
